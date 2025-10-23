@@ -1,0 +1,5 @@
+github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
+github.com/spf13/cobra v1.8.0 h1:7aJaZx1B85qltLMc546zn58BxxfZdR/W22ej9CFoEf0=
+github.com/spf13/pflag v1.0.5 h1:iy+VFUOCP1a+8yFto/drg2CJ5u0yRoB7fZw3DKv/JXA=
+github.com/wbreza/azd-new/core/internal v0.1.0-preview h1:pNRARFs3Nrgu+wse6myEq4IeQ5eU81c0CqdB0naEJxQ=
+github.com/wbreza/azd-new/core/sdk v0.1.0-preview h1:vckruLsos8AcOGAxdTnUIWdPtWfMJLiciRmgcorlt9o=

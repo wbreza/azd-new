@@ -4,7 +4,7 @@ package sdk
 import (
 	"fmt"
 
-	"github.com/wbreza/azd-new/core/internal/utils"
+	utils "github.com/wbreza/azd-new/core/internal"
 )
 
 // Client represents the main SDK client for Azure Dev operations.
