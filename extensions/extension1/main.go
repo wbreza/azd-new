@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/wbreza/azd-new/extensions/extension1/cmd"
+	"github.com/wbreza/azd-new/extensions/extension1/internal/cmd"
 )
 
 func main() {

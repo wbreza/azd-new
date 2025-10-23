@@ -10,8 +10,12 @@ This repository implements the Go monorepo specification defined in `go_monorepo
 ├─ core/
 │  ├─ cli/                        # Main Azure Dev CLI (Cobra app)
 │  │  ├─ main.go                  # CLI entry point
-│  │  ├─ cmd/                     # Cobra command definitions
-│  │  └─ internal/                # CLI-specific internal packages
+│  │  └─ internal/                # All CLI internals
+│  │     └─ cmd/                  # Command package
+│  │        ├─ root.go            # Root command
+│  │        ├─ deploy.go          # Deploy command
+│  │        ├─ init.go            # Init command
+│  │        └─ provision.go       # Provision command
 │  ├─ sdk/                        # Public SDK for extensions
 │  │  ├─ client.go                # SDK client implementation
 │  │  └─ go.mod
@@ -21,12 +25,18 @@ This repository implements the Go monorepo specification defined in `go_monorepo
 └─ extensions/
    ├─ extension1/                 # Sample extension (Cobra app)
    │  ├─ main.go                  # Extension entry point
-   │  ├─ cmd/                     # Extension-specific commands
-   │  └─ internal/                # Extension-specific internals
+   │  └─ internal/                # All extension internals
+   │     └─ cmd/                  # Command package
+   │        ├─ root.go            # Root command
+   │        ├─ custom.go          # Custom command
+   │        └─ integrate.go       # Integrate command
    └─ extension2/                 # Sample monitoring extension
       ├─ main.go
-      ├─ cmd/
       └─ internal/
+         └─ cmd/
+            ├─ root.go            # Root command
+            ├─ monitor.go         # Monitor command
+            └─ analyze.go         # Analyze command
 
 ```
 
@@ -104,4 +114,6 @@ git push origin core/cli/v1.27.0
 - All CLI applications use the Cobra framework
 - The workspace handles local module resolution during development
 - Extensions can only import from the public SDK, not internal utilities
-- Each CLI app follows the pattern: `main.go` → `cmd/root.go` → `internal/commands/`
+- Each CLI app follows the pattern: `main.go` → `internal/cmd/` with separate files for each command
+- Root command is in `root.go`, individual commands are in their own files (e.g., `deploy.go`, `custom.go`)
+- No packages are exposed at the module level - everything is internal to each CLI application

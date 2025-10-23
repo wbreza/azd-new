@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/wbreza/azd-new/core/cli/internal/commands"
 )
 
 var rootCmd = &cobra.Command{
@@ -21,7 +20,7 @@ func Execute() error {
 }
 
 func init() {
-	rootCmd.AddCommand(commands.NewDeployCommand())
-	rootCmd.AddCommand(commands.NewInitCommand())
-	rootCmd.AddCommand(commands.NewProvisionCommand())
+	rootCmd.AddCommand(newDeployCommand())
+	rootCmd.AddCommand(newInitCommand())
+	rootCmd.AddCommand(newProvisionCommand())
 }

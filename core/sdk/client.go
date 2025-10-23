@@ -24,11 +24,11 @@ func NewClient(config map[string]string) *Client {
 // Deploy performs a deployment operation.
 func (c *Client) Deploy(appName string) error {
 	c.logger.Info(fmt.Sprintf("Starting deployment for app: %s", appName))
-	
+
 	if !utils.ValidateConfig(c.config) {
 		return fmt.Errorf("invalid configuration")
 	}
-	
+
 	// Simulate deployment logic
 	c.logger.Info(fmt.Sprintf("Deployment completed for app: %s", appName))
 	return nil

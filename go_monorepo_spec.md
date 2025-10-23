@@ -44,7 +44,7 @@ This document defines the structure, module layout, versioning, and workflow for
 
 Committed at the root of the repo:
 ```txt
-go 1.22
+go 1.25
 
 use (
   ./core/cli
@@ -66,7 +66,7 @@ use (
 ```go
 module github.com/azure/azure-dev/core/sdk
 
-go 1.22
+go 1.25
 
 require (
     github.com/azure/azure-dev/core/internal v1.0.0
@@ -77,7 +77,7 @@ require (
 ```go
 module github.com/azure/azure-dev/core/cli
 
-go 1.22
+go 1.25
 
 require (
     github.com/azure/azure-dev/core/sdk v1.6.0
@@ -89,7 +89,7 @@ require (
 ```go
 module github.com/azure/azure-dev/extensions/extension1
 
-go 1.22
+go 1.25
 
 require (
     github.com/azure/azure-dev/core/sdk v1.6.0

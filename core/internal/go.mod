@@ -1,3 +1,3 @@
 module github.com/wbreza/azd-new/core/internal
 
-go 1.22
+go 1.25
